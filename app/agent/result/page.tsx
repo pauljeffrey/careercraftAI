@@ -9,12 +9,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Download, ArrowLeft, CheckCircle, XCircle, User, Briefcase, Lightbulb, MessageSquare } from "lucide-react"
-import { useToast } from "@/components/ui/use-toast"
+import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
 
 export default function Results() {
   const [results, setResults] = useState(null)
   const router = useRouter()
-  const { toast } = useToast()
 
   useEffect(() => {
     // Get results from localStorage
@@ -49,11 +49,7 @@ export default function Results() {
       document.body.removeChild(a)
     } catch (error) {
       console.error(`Error downloading ${downloadFilePath}:`, error)
-      toast({
-        title: "Download Failed",
-        description: `Could not download the ${downloadFilePath}. Please try again.`,
-        variant: "destructive",
-      })
+      toast.error(`Could not download the ${downloadFilePath}. Please try again.`)
     }
   }
 
@@ -72,7 +68,7 @@ export default function Results() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
-
+      <Toaster />
       <div className="container mx-auto py-12 px-4">
         <div className="flex items-center mb-6">
           <Button variant="outline" className="mr-4" onClick={() => router.push("/agent")}>
