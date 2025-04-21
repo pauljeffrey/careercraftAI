@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -63,4 +63,206 @@
     animation: spin 20s linear infinite;
   }
 }
+ */
 
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.1 83.9% 59.1%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84.9% 16.5%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 47.4% 11.2%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 47.4% 11.2%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 212.7 26.8% 15.6%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 212.7 26.8% 15.6%;
+    --muted-foreground: 215 34.4% 61%;
+
+    --accent: 212.7 26.8% 15.6%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 212.7 26.8% 15.6%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "liga" 1,
+      "calt" 1,
+      "cv01" 1,
+      "cv02" 1;
+  }
+}
+
+@layer components {
+  .radix-themes {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    --accent-1: hsl(210, 40%, 96.1%);
+    --accent-2: hsl(206, 22%, 74.5%);
+    --accent-3: hsl(205, 20%, 65.1%);
+    --accent-4: hsl(205, 22%, 55.7%);
+    --accent-5: hsl(205, 25%, 46.3%);
+    --accent-6: hsl(205, 30%, 36.9%);
+    --accent-7: hsl(205, 39%, 27.4%);
+    --accent-8: hsl(205, 54%, 18%);
+    --accent-9: hsl(206, 83%, 9%);
+    --gray-1: hsl(0, 0%, 100%);
+    --gray-2: hsl(0, 0%, 96.1%);
+    --gray-3: hsl(0, 0%, 85.1%);
+    --gray-4: hsl(0, 0%, 74.5%);
+    --gray-5: hsl(0, 0%, 65.1%);
+    --gray-6: hsl(0, 0%, 55.7%);
+    --gray-7: hsl(0, 0%, 46.3%);
+    --gray-8: hsl(0, 0%, 36.9%);
+    --gray-9: hsl(0, 0%, 27.4%);
+    --gray-10: hsl(0, 0%, 18%);
+    --gray-11: hsl(0, 0%, 9%);
+    --violet-1: hsl(262, 48%, 95.1%);
+    --violet-2: hsl(258, 33%, 85.9%);
+    --violet-3: hsl(255, 24%, 76.5%);
+    --violet-4: hsl(255, 21%, 67.1%);
+    --violet-5: hsl(256, 18%, 57.7%);
+    --violet-6: hsl(255, 16%, 48.3%);
+    --violet-7: hsl(255, 18%, 38.8%);
+    --violet-8: hsl(256, 22%, 29.4%);
+    --violet-9: hsl(257, 28%, 20%);
+    --violet-10: hsl(257, 37%, 10.6%);
+    --purple-1: hsl(280, 52%, 95.1%);
+    --purple-2: hsl(276, 36%, 85.9%);
+    --purple-3: hsl(274, 26%, 76.5%);
+    --purple-4: hsl(273, 23%, 67.1%);
+    --purple-5: hsl(271, 20%, 57.7%);
+    --purple-6: hsl(270, 17%, 48.3%);
+    --purple-7: hsl(269, 19%, 38.8%);
+    --purple-8: hsl(269, 24%, 29.4%);
+    --purple-9: hsl(268, 30%, 20%);
+    --purple-10: hsl(267, 40%, 10.6%);
+    --pink-1: hsl(317, 53%, 95.1%);
+    --pink-2: hsl(313, 37%, 85.9%);
+    --pink-3: hsl(310, 27%, 76.5%);
+    --pink-4: hsl(309, 24%, 67.1%);
+    --pink-5: hsl(307, 21%, 57.7%);
+    --pink-6: hsl(306, 18%, 48.3%);
+    --pink-7: hsl(305, 20%, 38.8%);
+    --pink-8: hsl(305, 25%, 29.4%);
+    --pink-9: hsl(304, 31%, 20%);
+    --pink-10: hsl(303, 41%, 10.6%);
+    --mauve-1: hsl(217, 24%, 95.1%);
+    --mauve-2: hsl(215, 13%, 85.9%);
+    --mauve-3: hsl(215, 10%, 76.5%);
+    --mauve-4: hsl(215, 9%, 67.1%);
+    --mauve-5: hsl(216, 8%, 57.7%);
+    --mauve-6: hsl(215, 7%, 48.3%);
+    --mauve-7: hsl(214, 7%, 38.8%);
+    --mauve-8: hsl(213, 9%, 29.4%);
+    --mauve-9: hsl(214, 11%, 20%);
+    --mauve-10: hsl(216, 15%, 10.6%);
+    --slate-1: hsl(210, 22%, 95.1%);
+    --slate-2: hsl(208, 12%, 85.9%);
+    --slate-3: hsl(206, 9%, 76.5%);
+    --slate-4: hsl(206, 8%, 67.1%);
+    --slate-5: hsl(205, 7%, 57.7%);
+    --slate-6: hsl(205, 6%, 48.3%);
+    --slate-7: hsl(204, 6%, 38.8%);
+    --slate-8: hsl(204, 7%, 29.4%);
+    --slate-9: hsl(203, 8%, 20%);
+    --slate-10: hsl(205, 10%, 10.6%);
+    --sage-1: hsl(137, 33%, 95.1%);
+    --sage-2: hsl(130, 18%, 85.9%);
+    --sage-3: hsl(126, 13%, 76.5%);
+    --sage-4: hsl(126, 11%, 67.1%);
+    --sage-5: hsl(125, 9%, 57.7%);
+    --sage-6: hsl(124, 8%, 48.3%);
+    --sage-7: hsl(123, 8%, 38.8%);
+    --sage-8: hsl(122, 9%, 29.4%);
+    --sage-9: hsl(121, 11%, 20%);
+    --sage-10: hsl(128, 16%, 10.6%);
+    --olive-1: hsl(45, 40%, 95.1%);
+    --olive-2: hsl(40, 23%, 85.9%);
+    --olive-3: hsl(38, 16%, 76.5%);
+    --olive-4: hsl(38, 13%, 67.1%);
+    --olive-5: hsl(37, 11%, 57.7%);
+    --olive-6: hsl(37, 9%, 48.3%);
+    --olive-7: hsl(36, 9%, 38.8%);
+    --olive-8: hsl(35, 10%, 29.4%);
+    --olive-9: hsl(34, 12%, 20%);
+    --olive-10: hsl(43, 18%, 10.6%);
+    --sand-1: hsl(30, 27%, 95.1%);
+    --sand-2: hsl(28, 15%, 85.9%);
+    --sand-3: hsl(27, 11%, 76.5%);
+    --sand-4: hsl(27, 9%, 67.1%);
+    --sand-5: hsl(26, 8%, 57.7%);
+    --sand-6: hsl(26, 7%, 48.3%);
+    --sand-7: hsl(25, 7%, 38.8%);
+    --sand-8: hsl(24, 8%, 29.4%);
+    --sand-9: hsl(23, 9%, 20%);
+    --sand-10: hsl(32, 13%, 10.6%);
+    --tomato-1: hsl(0, 66%, 95.1%);
+    --tomato-2: hsl(0, 44%, 85.9%);
+    --tomato-3: hsl(0, 31%, 76.5%);
+    --tomato-4: hsl(0, 27%, 67.1%);
+    --tomato-5: hsl(0, 23%, 57.7%);
+    --tomato-6: hsl(0, 21%, 48.3%);
+    --tomato-7: hsl(0, 22%, 38.8%);
+    --tomato-8: hsl(0, 26%, 29.4%);
+    --tomato-9: hsl(0, 32%, 20%);
+    --tomato-10: hsl(0, 46%, 10.6%);
+    --red-1: hsl(0, 68%, 95.1%);
+    --red-2: hsl(0, 48%, 85.9%);
+    /* --red-3: hsl( */
+  }
+}
